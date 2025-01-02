@@ -1,7 +1,7 @@
 import {forwardRef, useImperativeHandle, useRef} from 'react';
 import {createPortal} from 'react-dom';
 
-type ModalHandle = {
+export type ModalHandle = {
   open: () => void;
 };
 
@@ -20,7 +20,7 @@ const Modal = forwardRef<ModalHandle, ModalProps>(function Modal(
     return {
       open: () => {
         if (dialog.current) {
-          dialog.current.showModal(); // showModal() is a built-in method available on the <dialog> element
+          dialog.current.showModal();
         }
       },
     };
